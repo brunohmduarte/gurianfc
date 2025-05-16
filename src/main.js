@@ -3,8 +3,8 @@ import { createApp } from 'vue'
 
 // import of components
 import App from './App.vue'
-import router from './router/index.js'
-import store from './store/index.js'
+import router from './router/router.js'
+import store from './store/store.js'
 
 // import of another files
 import './assets/css/main.css'

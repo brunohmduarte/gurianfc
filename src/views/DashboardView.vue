@@ -1,7 +1,7 @@
 <template>
   <div class="antialiased bg-gray-50 dark:bg-gray-900">
     <!-- Navegate -->
-    <DashboardHeader />
+    <!-- <DashboardHeader /> -->
 
     <!-- Sidebar -->
     <DashboardSidebar />
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-  import DashboardHeader from '@/components/DashboardHeader.vue';
+  // import DashboardHeader from '@/components/DashboardHeader.vue';
   import DashboardSidebar from '@/components/DashboardSidebar.vue';
   import DashboardContent from '@/components/DashboardContent.vue';
 
   export default {
     name: "DashboardMain",
     components: {
-      DashboardHeader,
+      // DashboardHeader,
       DashboardSidebar,
       DashboardContent
     }
