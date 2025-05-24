@@ -9,7 +9,7 @@
 
       <div class="flex justify-end items-center">
         <a 
-          href="http://localhost:8080/#/seaseon" 
+          href="http://localhost:8080/admin/season" 
           class="py-4 px-8 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-lg rounded-lg text-sm dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Criar nova temporada

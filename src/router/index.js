@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AdminLayout from '@/layouts/AdminLayout.vue';
 
 const routes = [
   {
     path: '/admin',
-    component: AdminLayout,
+    component: () => import('../layouts/AdminLayout.vue'),
     redirect: '/admin/dashboard',
     children: [
       {
@@ -15,14 +14,20 @@ const routes = [
       {
         path: 'season',
         name: 'AdminSeason',
-        component: () => import('../views/SeasonView.vue')
+        component: () => import('../views/admin/SeasonPage.vue')
       }
     ]
   },
   {
     path: '/',
     name: 'Login',
-    component: () => import('../views/LoginView.vue')
+    component: () => import('../views/LoginPage.vue')
+  },
+  // Rotas públicas ou fallback
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/NotFoundPage.vue')
   }
 ]
 
