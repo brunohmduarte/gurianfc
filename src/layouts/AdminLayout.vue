@@ -7,7 +7,8 @@
     <DashboardSidebar />
 
     <!-- Main -->
-    <div class="bg-dashboard bg-no-repeat bg-cover bg-center p-5 pt-20 md:ml-64 w-65 h-screen overflow-y-auto">
+    <!-- <div class="bg-dashboard bg-no-repeat bg-cover bg-center p-5 md:ml-64 w-65 h-screen overflow-y-auto"> -->
+    <div class="p-5 md:ml-64 h-screen">
       <!-- <DashboardContent /> -->
       <router-view />
     </div>

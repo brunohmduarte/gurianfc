@@ -60,6 +60,7 @@
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             aria-controls="dropdown-pages"
             data-collapse-toggle="dropdown-pages"
+            @click="dropdownExpandedManager()"
           >
             <svg
               aria-hidden="true"
@@ -74,9 +75,9 @@
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span class="flex-1 ml-3 text-left whitespace-nowrap"
-              >Gerenciamento</span
-            >
+            
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">Gerenciamento</span>
+
             <svg
               aria-hidden="true"
               class="w-6 h-6"
@@ -91,27 +92,30 @@
               ></path>
             </svg>
           </button>
-          <ul id="dropdown-pages" class="hidden py-2 space-y-2">
+
+          <ul id="dropdown-pages" :class="{ hidden: !dropdown.expandedManager }" class="py-2 space-y-2">
             <li>
-              <a
-                href="ð/"
+              <a href="/admin/season"
                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Settings</a
               >
+                Temporadas
+              </a>
             </li>
+
             <li>
-              <a
-                href="#"
+              <a href="#"
                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Kanban</a
               >
+                Kanban
+              </a>
             </li>
+
             <li>
-              <a
-                href="#"
+              <a href="#"
                 class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Calendar</a
               >
+                Calendar
+              </a>
             </li>
           </ul>
         </li>
@@ -343,8 +347,7 @@
     <div
       class="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20"
     >
-      <a
-        href="#"
+      <a href="#"
         class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-600"
       >
         <svg
@@ -360,8 +363,8 @@
         </svg>
       </a>
       
-      <a
-        href="#"
+      <a 
+        href="/admin/system-settings"
         data-tooltip-target="tooltip-settings"
         class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
       >
@@ -385,7 +388,7 @@
         role="tooltip"
         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
       >
-        Settings page
+        Configurações do Sistema
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
       
@@ -596,5 +599,17 @@
 <script>
   export default {
     name: "DashboardSidebar",
+    data() {
+      return {
+        dropdown: {
+          expandedManager: false
+        }
+      }
+    },
+    methods: {
+      dropdownExpandedManager() {
+        this.dropdown.expandedManager = !this.dropdown.expandedManager
+      }
+    }
   };
 </script>

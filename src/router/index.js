@@ -15,6 +15,11 @@ const routes = [
         path: 'season',
         name: 'AdminSeason',
         component: () => import('../views/admin/SeasonPage.vue')
+      },
+      {
+        path: 'system-settings',
+        name: 'AdminSystemSettings',
+        component: () => import('../views/admin/SystemSettingsPage.vue')
       }
     ]
   },
